@@ -1,24 +1,25 @@
-%define product         GroupUserFolder
-%define realVersion     3.54.1
-%define release         1
+%define Product GroupUserFolder
+%define product groupuserfolder
+%define name    zope-%{Product}
+%define version 3.55.0
+%define bad_version %(echo %{version} | sed -e 's/\\./-/g')
+%define release %mkrel 1
 
-%define version %(echo %{realVersion} | sed -e 's/-/./g')
 %define zope_minver      2.5
-
 %define zope_home       %{_prefix}/lib/zope
 %define software_home   %{zope_home}/lib/python
 
-Summary:        GRUF is a convenient tool to manage groups of users within Zope
-Name:           zope-%{product}
-Version:        %{version}
-Release:        %mkrel %{release}
-License:        Zope Public License (ZPL)
-Group:          System/Servers
-Source:         http://plone.org/products/groupuserfolder/releases/%{version}/%{product}-%{realVersion}.tar.bz2
-URL:            http://ingeniweb.sourceforge.net/Products/GroupUserFolder/
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:      noarch
-Requires:       zope >= %{zope_minver}
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Summary:    GRUF is a convenient tool to manage groups of users within Zope
+License:    Zope Public License (ZPL)
+Group:      System/Servers
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{product}-%{bad_version}.tgz
+Requires:   zope >= %{zope_minver}
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 GRUF is a convenient tool to manage groups of users within Zope.
@@ -78,8 +79,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(-, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-
-
