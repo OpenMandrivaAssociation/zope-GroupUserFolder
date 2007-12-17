@@ -19,7 +19,6 @@ URL:        http://plone.org/products/%{product}
 Source:     http://plone.org/products/%{product}/releases/%{version}/%{product}-%{bad_version}.tgz
 Requires:   zope >= %{zope_minver}
 BuildArch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 GRUF is a convenient tool to manage groups of users within Zope.
