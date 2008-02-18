@@ -12,7 +12,7 @@
 Name:       %{name}
 Version:    %{version}
 Release:    %{release}
-Summary:    GRUF is a convenient tool to manage groups of users within Zope
+Summary:    Convenient tool to manage groups of users within Zope
 License:    Zope Public License (ZPL)
 Group:      System/Servers
 URL:        http://plone.org/products/%{product}
