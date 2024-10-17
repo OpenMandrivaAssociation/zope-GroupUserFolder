@@ -15,7 +15,7 @@ Release:    %{release}
 Summary:    Convenient tool to manage groups of users within Zope
 License:    Zope Public License (ZPL)
 Group:      System/Servers
-URL:        http://plone.org/products/%{product}
+URL:        https://plone.org/products/%{product}
 Source:     http://plone.org/products/%{product}/releases/%{version}/%{product}-%{bad_version}.tgz
 Requires:   zope >= %{zope_minver}
 BuildArch:  noarch
